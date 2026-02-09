@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Fontmoji | Emoji Art & Typography Generator</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Create stunning high-resolution emoji art, typography mosaics, and digital wallpapers with Fontmoji. Customize fonts, palettes, and layouts instantly.">
+    <meta name="keywords" content="emoji art generator, typography mosaic, fontmoji, emoji wallpaper maker, text to emoji, digital art tool, social media graphics, 4k wallpaper generator">
+    <meta name="author" content="Chris Pirillo">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pirillo.com/arcade/fontmoji.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pirillo.com/arcade/fontmoji.html">
+    <meta property="og:title" content="Fontmoji | Emoji Art Generator">
+    <meta property="og:description" content="Turn text into massive emoji mosaics. The ultimate tool for creative headers, wallpapers, and social assets.">
+    <meta property="og:image" content="https://pirillo.com/arcade/images/fontmoji.png">
+    <meta property="og:site_name" content="Pirillo Arcade">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ChrisPirillo">
+    <meta name="twitter:creator" content="@ChrisPirillo">
+    <meta name="twitter:url" content="https://pirillo.com/arcade/fontmoji.html">
+    <meta name="twitter:title" content="Fontmoji | Emoji Art Generator">
+    <meta name="twitter:description" content="Turn text into massive emoji mosaics. The ultimate tool for creative headers, wallpapers, and social assets.">
+    <meta name="twitter:image" content="https://pirillo.com/arcade/images/fontmoji.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Fontmoji",
+      "headline": "Fontmoji Emoji Art Generator",
+      "url": "https://pirillo.com/arcade/fontmoji.html",
+      "author": {
+        "@type": "Person",
+        "name": "Chris Pirillo",
+        "url": "https://pirillo.com"
+      },
+      "image": "https://pirillo.com/arcade/images/fontmoji.png",
+      "description": "A web-based tool to generate high-resolution typographic art using emojis.",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CQ4D3VQ3L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1CQ4D3VQ3L');
+    </script>
+    
+    <!-- Tailwind CSS (Critical - Load Early) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: The "Heavy Hitters" Collection (Expanded) -->
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Akaya+Telivigala&family=Alfa+Slab+One&family=Anton&family=Archivo+Black&family=Bakbak+One&family=Bangers&family=Bevan&family=Black+Han+Sans&family=Black+Ops+One&family=Bowlby+One+SC&family=Bungee&family=Bungee+Inline&family=Bungee+Outline&family=Bungee+Shade&family=Carter+One&family=Changa+One&family=Chela+One&family=Cherry+Bomb+One&family=Chicle&family=Coiny&family=Corben:wght@700&family=Creepster&family=Days+One&family=Dela+Gothic+One&family=Emblema+One&family=Erica+One&family=Fascinate+Inline&family=Faster+One&family=Fjalla+One&family=Fredoka:wght@700&family=Frijole&family=Fugaz+One&family=Gasoek+One&family=Geostar+Fill&family=Goblin+One&family=Graduate&family=Gravitas+One&family=Griffy&family=Hammersmith+One&family=Holtwood+One+SC&family=Impact&family=Irish+Grover&family=Joti+One&family=Kanit:wght@900&family=Kavoon&family=Keania+One&family=Knewave&family=Lalezar&family=Limelight&family=Londrina+Solid&family=Luckiest+Guy&family=Metal+Mania&family=Mochiy+Pop+One&family=Modak&family=Monoton&family=New+Rocker&family=Nosifer&family=Passion+One&family=Paytone+One&family=Permanent+Marker&family=Plaster&family=Poller+One&family=Potta+One&family=Press+Start+2P&family=Rammetto+One&family=Rampart+One&family=Ranchers&family=Righteous&family=Rowdies:wght@700&family=Rubik+Bubbles&family=Rubik+Glitch&family=Rubik+Mono+One&family=Rubik+Wet+Paint&family=Russo+One&family=Saira+Stencil+One&family=Sancreek&family=Seymour+One&family=Shrikhand&family=Sigmar&family=Sirin+Stencil&family=Sonsie+One&family=Squada+One&family=Staatliches&family=Stardos+Stencil:wght@700&family=Teko:wght@700&family=Titan+One&family=Trade+Winds&family=Ultra&family=Unlock&family=Vampiro+One&family=Wallpoet&family=Yeseva+One&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-body: #050505;
+            --hud-bg: rgba(18, 18, 21, 0.98);
+            --hud-border: rgba(255, 255, 255, 0.08);
+            --panel-bg: rgba(255, 255, 255, 0.03);
+            --accent: #f43f5e; /* Rose-500 */
+            --accent-hover: #e11d48;
+            --text-main: #ffffff;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, sans-serif;
+            overflow: hidden;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* --- Canvas Stage --- */
+        #stage-area {
+            position: absolute; inset: 0;
+            background-color: #050505;
+            background-image: 
+                linear-gradient(to right, #111 1px, transparent 1px),
+                linear-gradient(to bottom, #111 1px, transparent 1px);
+            background-size: 40px 40px;
+            display: flex; justify-content: center; align-items: center;
+            overflow: hidden;
+            z-index: 1;
+            padding: 40px; /* Safe area */
+        }
+
+        canvas {
+            box-shadow: 0 0 100px rgba(0,0,0,0.9);
+            max-width: 100%; max-height: 100%;
+            object-fit: contain;
+            /* Ratio enforced by JS, but max-width keeps it in view */
+        }
+
+        /* --- Floating HUD --- */
+        #hud-panel {
+            position: fixed; top: 20px; right: 20px; bottom: 20px;
+            width: 360px;
+            background: var(--hud-bg);
+            border: 1px solid var(--hud-border);
+            border-radius: 16px;
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            display: flex; flex-direction: column;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        #hud-panel.collapsed {
+            transform: translateX(calc(100% + 20px));
+        }
+
+        /* Header */
+        .hud-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--hud-border);
+            display: flex; justify-content: space-between; align-items: center;
+            flex-shrink: 0;
+            background: rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        .brand { font-family: 'Black Ops One', sans-serif; font-size: 1.2rem; letter-spacing: 2px; color: white; text-transform: uppercase; }
+        .brand span { color: var(--accent); }
+
+        /* Scroll Body */
+        .hud-content {
+            flex: 1; overflow-y: auto; padding: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: #333 transparent;
+        }
+        .hud-content::-webkit-scrollbar { width: 4px; }
+        .hud-content::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+
+        /* --- PANEL CARDS --- */
+        .panel-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--hud-border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .panel-card:last-child { margin-bottom: 0; }
+
+        .card-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 12px;
+        }
+        .card-title {
+            font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--accent);
+        }
+
+        /* Controls */
+        .control-row { margin-bottom: 12px; }
+        .control-row:last-child { margin-bottom: 0; }
+        
+        .label-row { display: flex; justify-content: space-between; margin-bottom: 6px; align-items: center; }
+        .label { font-size: 0.7rem; color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .val { font-size: 0.7rem; font-family: monospace; color: var(--text-dim); }
+
+        /* Inputs */
+        textarea.matrix-input {
+            width: 100%; background: #000; border: 1px solid #333;
+            color: white; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; 
+            font-size: 0.8rem;
+            padding: 10px; border-radius: 6px; outline: none; resize: vertical; min-height: 70px;
+            transition: border 0.2s;
+        }
+        textarea.matrix-input:focus { border-color: var(--accent); }
+
+        select.matrix-select {
+            width: 100%; background: #09090b; border: 1px solid #333;
+            color: white; padding: 10px; border-radius: 6px; font-size: 0.75rem; outline: none; cursor: pointer;
+            appearance: none;
+        }
+
+        /* Sliders */
+        input[type="range"] { -webkit-appearance: none; width: 100%; height: 4px; background: #333; border-radius: 2px; display: block; }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; width: 14px; height: 14px; background: #e2e8f0; border-radius: 50%;
+            cursor: pointer; border: 2px solid #000; transition: transform 0.1s;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); background: var(--accent); }
+
+        /* Color & Toggles */
+        .mode-row { display: flex; background: #000; padding: 3px; border-radius: 6px; border: 1px solid #333; margin-bottom: 12px; }
+        .mode-opt { flex: 1; text-align: center; }
+        .mode-opt input { display: none; }
+        .mode-opt span { 
+            display: block; padding: 8px 0; font-size: 0.65rem; font-weight: 700; color: #64748b; 
+            border-radius: 4px; cursor: pointer; transition: 0.2s; 
+        }
+        .mode-opt input:checked + span { background: #222; color: white; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+
+        .color-well {
+            height: 36px; border: 1px solid #333; border-radius: 6px; overflow: hidden; position: relative; margin-bottom: 0;
+        }
+        .color-well input { position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; cursor: pointer; border: none; padding: 0; }
+
+        /* Native Toggles */
+        .native-toggle { position: relative; }
+        .native-toggle::after { content: ''; position: absolute; inset: -3px; border: 2px solid transparent; border-radius: 6px; transition: 0.2s; pointer-events: none; }
+        .native-toggle.active::after { border-color: white; inset: -2px; }
+
+        /* Footer */
+        .hud-footer {
+            padding: 20px; border-top: 1px solid var(--hud-border); background: rgba(0,0,0,0.2);
+            display: flex; flex-direction: column; gap: 10px; flex-shrink: 0;
+        }
+        .btn {
+            width: 100%; padding: 14px; border-radius: 8px; font-size: 0.75rem; font-weight: 800;
+            text-transform: uppercase; cursor: pointer; border: none; transition: 0.2s; letter-spacing: 1px;
+        }
+        .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3); }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .btn-sec { background: #27272a; color: #e2e8f0; border: 1px solid rgba(255,255,255,0.05); }
+        .btn-sec:hover { background: #3f3f46; color: white; }
+        .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        
+        .btn-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: #27272a; border-radius: 6px; cursor: pointer; border: 1px solid #333; color: #aaa; flex-shrink: 0; }
+        .btn-icon:hover { background: #333; color: white; border-color: #555; }
+
+        .hidden { display: none !important; }
+        .row-flex { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        
+        /* Toggle Header Button */
+        #toggle-btn {
+            width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.05); transition: 0.2s; color: white;
+        }
+        #toggle-btn:hover { background: rgba(255,255,255,0.1); }
+        
+        /* Floating Toggle (When HUD Collapsed) */
+        #float-toggle {
+            position: fixed; top: 20px; right: 20px; width: 44px; height: 44px;
+            background: var(--hud-bg); border: 1px solid var(--hud-border);
+            border-radius: 12px; z-index: 101; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: 0.2s; backdrop-filter: blur(10px);
+            opacity: 0; pointer-events: none; transform: translateX(20px);
+        }
+        #float-toggle.visible { opacity: 1; pointer-events: auto; transform: translateX(0); }
+        #float-toggle:hover { border-color: var(--accent); }
+        #float-toggle svg { width: 24px; height: 24px; color: white; }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Canvas Wrapper (Main Content) -->
+    <main id="stage-area">
+        <canvas id="main-canvas" aria-label="Emoji Art Preview Canvas"></canvas>
+    </main>
+
+    <!-- Floating Toggle (Visible when HUD is closed) -->
+    <button id="float-toggle" aria-label="Open Settings">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+        </svg>
+    </button>
+
+    <!-- HUD (Controls) -->
+    <aside id="hud-panel" aria-label="Control Panel">
+        <header class="hud-header" id="panel-toggle" role="button" aria-expanded="true" aria-controls="hud-content">
+            <span class="brand">FONT<span>MOJI</span></span>
+            <div id="toggle-btn" aria-label="Close Settings">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+        </header>
+
+        <div id="hud-content" class="hud-content">
+            
+            <!-- CARD 1: SOURCE -->
+            <section class="panel-card">
+                <div class="card-header"><span class="card-title">Source</span></div>
+                <div class="control-row">
+                    <textarea id="ui-text" class="matrix-input" placeholder="CLICK TO TYPE...&#10;ENTER FOR NEW LINE" aria-label="Text Input"></textarea>
+                </div>
+                <div class="control-row">
+                    <div class="label-row"><label for="ui-ratio" class="label">Aspect Ratio</label></div>
+                    <select id="ui-ratio" class="matrix-select">
+                        <option value="16:9">16:9 Landscape</option>
+                        <option value="1:1">1:1 Square</option>
+                        <option value="4:5">4:5 Portrait</option>
+                        <option value="9:16">9:16 Story</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- CARD 2: TYPOGRAPHY -->
+            <section class="panel-card">
+                <div class="card-header"><span class="card-title">Typography</span></div>
+                <div class="control-row">
+                    <div class="label-row"><label for="ui-font" class="label">Font</label></div>
+                    <select id="ui-font" class="matrix-select"></select>
+                </div>
+
+                <div class="control-row">
+                    <div class="label-row"><label for="ui-density" class="label">Grid Density</label><span id="val-density" class="val">10px</span></div>
+                    <input type="range" id="ui-density" min="10" max="40" value="15">
+                </div>
+
+                <div class="control-row">
+                    <div class="label-row"><label for="ui-spacing" class="label">Letter Spacing</label><span id="val-spacing" class="val">0</span></div>
+                    <input type="range" id="ui-spacing" min="0" max="50" value="0">
+                </div>
+
+                <div class="control-row">
+                    <div class="label-row"><label for="ui-gap" class="label">Emoji Gap</label><span id="val-gap" class="val">0</span></div>
+                    <input type="range" id="ui-gap" min="-50" max="50" value="0">
+                </div>
+            </section>
+
+            <!-- CARD 3: COLOR ENGINE -->
+            <section class="panel-card">
+                <div class="card-header"><span class="card-title">Color Engine</span></div>
+                <div class="mode-row" role="radiogroup" aria-label="Color Mode">
+                    <label class="mode-opt"><input type="radio" name="colorMode" value="original" checked><span>ORIGINAL</span></label>
+                    <label class="mode-opt"><input type="radio" name="colorMode" value="native"><span>NATIVE</span></label>
+                    <label class="mode-opt"><input type="radio" name="colorMode" value="tint"><span>TINT</span></label>
+                </div>
+
+                <!-- Palette Selector (Original) -->
+                <div id="ctrl-palette" class="control-row">
+                    <div class="label-row"><label for="ui-palette" class="label">Base Palette</label></div>
+                    <div class="row-flex">
+                        <select id="ui-palette" class="matrix-select flex-1"></select>
+                        <button id="btn-remix-palette" class="btn-icon" title="Shuffle emojis" aria-label="Shuffle Palette">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Native Color Selector (Multi-Select) -->
+                <div id="ctrl-native" class="hidden control-row">
+                    <div class="label-row"><label class="label">Filter Colors</label></div>
+                    <div id="native-color-grid" class="grid grid-cols-5 gap-2 mb-3">
+                        <!-- JS injects buttons here -->
+                    </div>
+                    <button id="btn-remix-native" class="btn btn-sec w-full py-2">Remix Selection</button>
+                    <p class="text-[10px] text-gray-500 mt-2 font-mono leading-tight">Select multiple colors to mix.</p>
+                </div>
+
+                <!-- Tint Controls (Single Hex) -->
+                <div id="ctrl-tint" class="hidden control-row">
+                    <div class="label-row">
+                        <span class="label">Tint Color</span>
+                        <span id="target-name" class="val">RED</span>
+                    </div>
+                    <div class="row-flex">
+                        <div class="color-well flex-1"><input type="color" id="ui-target-color" value="#f43f5e" aria-label="Target Color"></div>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-2 font-mono leading-tight">Tints selected palette with this color.</p>
+                </div>
+            </section>
+
+            <!-- CARD 4: ENVIRONMENT -->
+            <section class="panel-card">
+                <div class="card-header"><span class="card-title">Environment</span></div>
+                <div class="control-row">
+                    <select id="ui-bg-mode" class="matrix-select mb-3" aria-label="Background Mode">
+                        <option value="solid">Solid Color</option>
+                        <option value="gradient">Gradient</option>
+                        <option value="transparent">Transparent</option>
+                    </select>
+                    
+                    <div id="bg-solid-wrap">
+                        <div class="color-well"><input type="color" id="ui-bg-solid" value="#050505" aria-label="Solid Background Color"></div>
+                    </div>
+
+                    <div id="bg-grad-wrap" class="hidden">
+                        <div class="btn-row mb-3">
+                            <div class="color-well"><input type="color" id="ui-bg-grad-1" value="#111111" aria-label="Gradient Color 1"></div>
+                            <div class="color-well"><input type="color" id="ui-bg-grad-2" value="#000000" aria-label="Gradient Color 2"></div>
+                        </div>
+                        <div class="label-row"><label for="ui-bg-angle" class="label">Angle</label><span id="val-angle" class="val">45°</span></div>
+                        <input type="range" id="ui-bg-angle" min="0" max="360" value="45">
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer class="hud-footer">
+            <button id="btn-export" class="btn btn-primary">Download 4K PNG</button>
+            <div class="btn-row">
+                <button id="btn-random" class="btn btn-sec">Randomize</button>
+                <button id="btn-reset" class="btn btn-sec">Reset</button>
+            </div>
+        </footer>
+    </aside>
+
+    <script>
+        /**
+         * FONTMOJI
+         * Native Kerning & Spacing | Card Layout | Massive Assets
+         */
+
+        // --- ASSETS ---
+        const FONTS = [
+            "Rubik Mono One", "Anton", "Archivo Black", "Alfa Slab One", "Bangers", 
+            "Black Ops One", "Carter One", "Fredoka", "Fugaz One", "Luckiest Guy", 
+            "Passion One", "Righteous", "Russo One", "Titan One", "Ultra", 
+            "Sigmar", "Bevan", "Shrikhand", "Paytone One", "Rammetto One",
+            "Bowlby One SC", "Black Han Sans", "Holtwood One SC",
+            "Creepster", "Faster One", "Gasoek One", "Knewave", "Modak", 
+            "Poller One", "Rampart One", "Saira Stencil One",
+            "Bungee", "Bungee Shade", "Fascinate Inline", "Limelight", "Londrina Solid", 
+            "Monoton", "Press Start 2P", "Squada One", "Staatliches", "Teko", "Trade Winds", "Unlock",
+            // New Additions
+            "Akaya Telivigala", "Bakbak One", "Bungee Inline", "Bungee Outline", "Cherry Bomb One",
+            "Chicle", "Coiny", "Corben", "Days One", "Erica One", "Frijole", "Geostar Fill",
+            "Goblin One", "Graduate", "Gravitas One", "Griffy", "Irish Grover", "Joti One",
+            "Kanit", "Kavoon", "Keania One", "Lalezar", "Metal Mania", "Mochiy Pop One",
+            "New Rocker", "Nosifer", "Permanent Marker", "Plaster", "Potta One", "Ranchers",
+            "Rubik Bubbles", "Rubik Glitch", "Rubik Wet Paint", "Sancreek", "Sirin Stencil",
+            "Sonsie One", "Stardos Stencil", "Vampiro One", "Wallpoet"
+        ];
+
+        const PALETTES = {
+            all: [],
+            faces: ['😀','😃','😄','😁','😆','😅','🤣','😂','🙂','🙃','😉','😊','😇','🥰','😍','🤩','😘','😗','☺️','😚','😙','🥲','😋','😛','😜','🤪','😝','🤑','🤗','🤭','🫢','🫣','🤫','🤔','🫡','🤐','🤨','😐','😑','😶','🫥','😏','😒','🙄','😬','😮‍💨','🤥','😌','😔','😪','🤤','😴','😷','🤒','🤒','🤕','🤢','🤮','🤧','🥵','🥶','🥴','😵','🤯','🤠','🥳','🥸','😎','🤓','🧐','😕','😟','🙁','☹️','😮','😯','😲','😳','🥺','😦','😧','😨','😰','😥','😢','😭','😱','😖','😣','😞','😓','😩','😫','🥱','😤','😡','😠','🤬','😈','👿','💀','☠️','💩','🤡','👹','👺','👻','👽','👾','🤖'],
+            hands: [],
+            animals: ['🐵','🐒','🦍','🦧','🐶','🐕','🦮','🐕‍🦺','🐩','🐺','🦊','🦝','🐱','🐈','🐈‍⬛','🦁','🐯','🐅','🐆','🐴','🐎','🦄','🦓','🦌','🦬','🐮','🐂','🐄','🐷','🐖','🐗','🐽','🐏','🐑','🐐','🐪','🐫','🦙','🦒','🐘','🦣','🦏','🦛','🐭','🐁','🐀','🐹','🐰','🐇','🐿️','🦫','🦔','🦇','🐻','🐻‍❄️','🐨','🐼','🦥','🦦','🦨','🦘','🦡','🐾','🦃','🐔','🐓','🐣','🐤','🐥','🐦','🐧','🕊️','🦅','🦆','🦢','🦉','🦤','🪶','🦩','🦚','🦜','🐸','🐊','🐢','🦎','🐍','🐲','🐉','🦕','🦖','🐳','🐋','🐬','🦭','🐟','🐠','🐡','🦈','🐙','🐚','🪸','🐌','🦋','🐛','🐜','🐝','🪲','🐞','🦗','🪳','🕷️','🕸️','🦂','🦟','🪰','🪱','🦠'],
+            food: ['🍇','🍈','🍉','🍊','🍋','🍌','🍍','🥭','🍎','🍏','🍐','🍑','🍒','🍓','🫐','🥝','🍅','🫒','🥥','🥑','🍆','🥔','🥕','🌽','🌶️','🫑','🥒','🥬','🥦','🧄','🧅','🍄','🥜','🫘','🌰','🍞','🥐','🥖','🫓','🥨','🥯','🥞','🧇','🧀','🍖','🍗','🥩','🥓','🍔','🍟','🍕','🌭','🥪','🌮','🌯','🫔','🥙','🧆','🥚','🍳','🥘','🍲','🫕','🥣','🥗','🍿','🧈','🧂','🥫','🍱','🍘','🍙','🍚','🍛','🍜','🍝','🍠','🍢','🍣','🍤','🍥','🥮','🍡','🥟','🥠','🥡','🦀','🦞','🦐','🦑','🦪','🍦','🍧','🍨','🍩','🍪','🎂','🍰','🧁','🥧','🍫','🍬','🍭','🍮','🍯','🍼','🥛','☕','🫖','🍵','🍶','🍾','🍷','🍸','🍹','🍺','🍻','🥂','🥃','🥤','🧋','🧃','🧉','🧊','🥢','🍽️','🍴','🥄'],
+            tech: ['⌚','📱','💻','⌨️','🖥️','🖨️','🖱️','🖲️','🕹️','🗜️','💽','💾','💿','📀','📼','📷','📸','📹','🎥','📽️','🎞️','📞','☎️','📟','📠','📺','📻','🎙️','🎚️','🎛️','🧭','⏱️','⏲️','⏰','🕰️','⌛','⏳','📡','🔋','🔌','💡','🔦','🕯️','🪔','🧯','🛢️','💸','💵','💴','💶','💷','🪙','💰','💳','💎','⚖️','🪜','🧰','🪛','🔧','🔨','⚒️','🛠️','⛏️','🪚','🔩','⚙️','🪤','🧱','⛓️','🧲','🔫','💣','🧨','🪓','🔪','🗡️','⚔️','🛡️'],
+            nature: ['🌍','🌎','🌏','🌐','🗺️','🗾','🧭','🏔️','⛰️','🌋','🗻','🏕️','🏖️','🏜️','🏝️','🏞️','🏟️','🏛️','🏗️','🧱','🪨','🪵','🛖','🏘️','🏚️','🏠','🏡','🏢','🏣','🏤','🏥','🏦','🏨','🏩','🏪','🏫','🏬','🏭','🏯','🏰','💒','🗼','🗽','⛪','🕌','🛕','🕍','⛩️','🕋','⛲','⛺','🌁','🌃','🏙️','🌄','🌅','🌆','🌇','🌉','♨️','🌑','🌒','🌓','🌔','🌕','🌖','🌗','🌘','🌙','🌚','🌛','🌜','☀️','🌝','🌞','⭐','🌟','🌠','🌌','☁️','⛅','⛈️','🌤️','🌥️','🌦️','🌧️','🌨️','🌩️','🌪️','🌫️','🌬️','🌀','🌈','🌂','☂️','☔','⛱️','⚡','❄️','☃️','⛄','☄️','🔥','💧','🌊'],
+            hearts: ['❤️','🧡','💛','💚','💙','💜','🤎','🖤','🤍','💔','❤️‍🔥','❤️‍🩹','💖','💗','💓','💞','💕','💟','❣️','💋','💌'],
+            shapes: ['🔴','🟠','🟡','🟢','🔵','🟣','🟤','⚫','⚪','🟥','🟧','🟨','🟩','🟦','🟪','🟫','⬛','⬜','🔶','🔷','🔸','🔹','🔺','🔻','💠','🔘'],
+            cyberpunk: ['👾','🤖','👽','🔋','🔌','💾','💿','🖥️','📡','📟','🟣','🟦','⬛','⚡','🧪','🧬'],
+            retro: ['📼','📺','📻','🕹️','🛼','🎳','🎰','🎱','🎲','📻','📀','🎙️'],
+            horror: ['💀','☠️','👻','👽','👾','👹','👺','🤡','🔪','🩸','⚰️','🪦','🧟','🧟‍♀️','🧛','🧛‍♀️','🦇','🕷️','🕸️','🥀'],
+            ocean: ['🌊','💧','🐟','🐠','🐡','🦈','🐙','🐚','🪸','🦀','🦞','🦐','🦑','🐋','🐳','🐬','🦭','🐧','⚓','⛵','🚤','🛳️'],
+            jungle: ['🌴','🌿','☘️','🍃','🐍','🐆','🐅','🦜','🦥','🦧','🦍','🐒','🦎','🐸','🐊','🐘'],
+            space: ['🚀','🛸','🛰️','🪐','🌑','🌒','🌓','🌔','🌕','🌖','🌗','🌘','🌙','🌚','🌛','🌜','☀️','🌝','🌞','⭐','🌟','🌠','🌌','👩‍🚀','👨‍🚀','👽'],
+            zodiac: ['♈','♉','♊','♋','♋','♌','♍','♎','♏','♐','♑','♒','♓','⛎'],
+            clocks: ['🕛','🕧','🕐','🕜','🕑','🕝','🕒','🕞','🕓','🕟','🕔','🕠','🕕','🕡','🕖','🕢','🕗','🕣','🕘','🕤','🕙','🕥','🕚','🕦'],
+            sports: ['⚽','🏀','🏈','⚾','🥎','🎾','🏐','🏉','🥏','🎱','🪀','🏓','🏸','🏒','🏑','🥍','🏏','🪃','🥅','⛳','🪁','🏹','🎣','🤿','🥊','🥋','🎽','🛹','🛼','🛷','⛸️','🥌','🎿','⛷️','🏂','🪂','🏋️','🤼','🤸','⛹️','🤺','🤾','🏌️','🏇','🧘','🏄','🏊','🤽','🚣','🧗','🚵','🚴','🏆','🥇','🥈','🥉','🏅','🎖️','🏵️','🎗️','🎫','🎟️','🎪','🤹','🎭','🩰','🎨','🎬','🎤','🎧','🎼','🎹','🥁','🎷','🎺','🎸','🪕','🎻','🎲','♟️','🎯','🎳','🎮','🎰','🧩'],
+            music: ['🎼','🎵','🎶','🎙️','🎚️','🎛️','🎤','🎧','📻','🎷','🪗','🎸','🎹','🎺','🎻','🪕','🥁','🪘'],
+            weather: ['🌑','🌒','🌓','🌔','🌕','🌖','🌗','🌘','🌙','🌚','🌛','🌜','☀️','🌝','🌞','⭐','🌟','🌠','🌌','☁️','⛅','⛈️','🌤️','🌥️','🌦️','🌧️','🌨️','🌩️','🌪️','🌫️','🌬️','🌀','🌈','🌂','☂️','☔','⛱️','⚡','❄️','☃️','⛄','☄️','🔥','💧','🌊'],
+            flags: ['🏁','🚩','🎌','🏴','🏳️','🏳️‍🌈','🏳️‍⚧️','🏴‍☠️','🇦🇨','🇦🇩','🇦🇪','🇦🇫','🇦🇬','🇦🇮','🇦🇱','🇦🇲','🇦🇴','🇦🇶','🇦🇷','🇦🇸','🇦🇹','🇦🇺','🇦🇼','🇦🇽','🇦🇿','🇧🇦','🇧🇧','🇧🇩','🇧🇪','🇧🇫','🇧🇬','🇧🇭','🇧🇮','🇧🇯','🇧🇱','🇧🇲','🇧🇳','🇧🇴','🇧🇶','🇧🇷','🇧🇸','🇧🇹','🇧🇻','🇧🇼','🇧🇾','🇧🇿','🇨🇦','🇨🇨','🇨🇩','🇨🇫','🇨🇬','🇨🇭','🇨🇮','🇨🇰','🇨🇱','🇨🇲','🇨🇳','🇨🇴','🇨🇵','🇨🇷','🇨🇺','🇨🇻','🇨🇼','🇨🇽','🇨🇾','🇨🇿','🇩🇪','🇩🇬','🇩🇯','🇩🇰','🇩🇲','🇩🇴','🇩🇿','🇪🇦','🇪🇨','🇪🇪','🇪🇬','🇪🇭','🇪🇷','🇪🇸','🇪🇹','🇪🇺','🇫🇮','🇫🇯','🇫🇰','🇫🇲','🇫🇴','🇫🇷','🇬🇦','🇬🇧','🇬🇩','🇬🇪','🇬🇫','🇬🇬','🇬🇭','🇬🇮','🇬🇱','🇬🇲','🇬🇳','🇬🇵','🇬🇶','🇬🇷','🇬🇸','🇬🇹','🇬🇺','🇬🇼','🇬🇾','🇭🇰','🇭🇲','🇭🇳','🇭🇷','🇭🇹','🇭🇺','🇮🇨','🇮🇩','🇮🇪','🇮🇱','🇮🇲','🇮🇳','🇮🇴','🇮🇶','🇮🇷','🇮🇸','🇮🇹','🇯🇪','🇯🇲','🇯🇴','🇯🇵','🇰🇪','🇰🇬','🇰🇭','🇰🇮','🇰🇲','🇰🇳','🇰🇵','🇰🇷','🇰🇼','🇰🇾','🇰🇿','🇱🇦','🇱🇧','🇱🇨','🇱🇮','🇱🇰','🇱🇷','🇱🇸','🇱🇹','🇱🇺','🇱🇻','🇱🇾','🇲🇦','🇲🇨','🇲🇩','🇲🇪','🇲🇫','🇲🇬','🇲🇭','🇲🇰','🇲🇱','🇲🇲','🇲🇳','🇲🇴','🇲🇵','🇲🇶','🇲🇷','🇲🇸','🇲🇹','🇲🇺','🇲🇻','🇲🇼','🇲🇽','🇲🇾','🇲🇿','🇳🇦','🇳🇨','🇳🇪','🇳🇫','🇳🇬','🇳🇮','🇳🇱','🇳🇴','🇳🇵','🇳🇷','🇳🇺','🇳🇿','🇴🇲','🇵🇦','🇵🇪','🇵🇫','🇵🇬','🇵🇭','🇵🇰','🇵🇱','🇵🇲','🇵🇳','🇵🇷','🇵🇸','🇵🇹','🇵🇼','🇵🇾','🇶🇦','🇷🇪','🇷🇴','🇷🇸','🇷🇺','🇷🇼','🇸🇦','🇸🇧','🇸🇨','🇸🇩','🇸🇪','🇸🇬','🇸H','🇸🇮','🇸🇯','🇸🇰','🇸🇱','🇸🇲','🇸🇳','🇸🇴','🇸🇷','🇸🇸','🇸🇹','🇸🇻','🇸🇽','🇸🇾','🇸🇿','🇹🇦','🇹🇨','🇹🇩','🇹🇫','🇹🇬','🇹🇭','🇹🇯','🇹🇰','🇹🇱','🇹🇲','🇹🇳','🇹🇴','🇹🇷','🇹🇹','🇹🇻','🇹🇼','🇹🇿','🇺🇦','🇺🇬','🇺🇲','🇺🇳','🇺🇸','🇺🇾','🇺🇿','🇻🇦','🇻🇨','🇻🇪','🇻🇬','🇻🇮','🇻🇳','🇻🇺','🇼🇫','🇼🇸','🇽🇰','🇾🇪','🇾🇹','🇿🇦','🇿🇲','🇿🇼'],
+            vehicles: ['🚗','🚕','🚙','🚌','🚎','🏎️','🚓','🚑','🚒','🚐','🛻','🚚','🚛','🚜','🏍️','🛵','🚲','🛴','🚍','🚔','🚘','🚖','🚂','🚃','🚄','🚅','🚆','🚇','🚈','🚉','🚊','🚝','🚞','🚋','🚌','🚍','🚎','🚐','🚑','🚒','🚓','🚔','🚕','🚖','🚗','🚘','🚙','🛻','🚚','🚛','🚜','🏎️','🏍️','🛵','🦽','🦼','🛺','🚲','🛴','🛹','🛼','🚏','🛣️','🛤️','🛢️','⛽','🚨','🚥','🚦','🛑','🚧','⚓','⛵','🛶','🚤','🛳️','⛴️','🛥️','🚢','✈️','🛩️','🛫','🛬','🪂','💺','🚁','🚟','🚠','🚡','🛰️','🚀','🛸'],
+            tools: ['🔨','🪓','⛏️','⚒️','🛠️','🗡️','⚔️','🔫','🪃','🏹','🛡️','🪚','🔧','🪛','🔩','⚙️','🗜️','⚖️','🦯','🔗','⛓️','🪝','🧰','🧲','🪜','⚗️','🧪','🧫','🧬','🔬','🔭','📡','💉','🩸','💊','🩹','🩺','🚪','🛗','🪞','🪟','🛏️','🛋️','🪑','🚽','🪠','🚿','🛁','🪤','🪒','🧴','🧷','🧹','🧺','🧻','🪣','🧼','🫧','🪥','🧽','🧯','🛒'],
+            clothing: ['👓','🕶️','🥽','🥼','🦺','👔','👕','👖','🧣','🧤','🧥','🧦','👗','👘','🥻','🩱','🩲','🩳','👙','👚','👛','👜','👝','🛍️','🎒','🩴','👞','👟','🥾','🥿','👠','👡','🩰','👢','👑','👒','🎩','🎓','🧢','🪖','⛑️','📿','💄','💍','💎'],
+            plants: ['🌵','🎄','🌲','🌳','🌴','🪵','🌱','🌿','☘️','🍀','🎍','🪴','🎋','🍃','🍂','🍁','🍄','🌾','💐','🌷','🌹','🥀','🌺','🌸','🌼','🌻'],
+            fantasy: ['👾','👽','🤖','🎃','👻','💀','☠️','🤡','👹','👺','👿','😈','🧚','🧜','🧞','🧟','🧛','🧙','🧝','🦄','🐲','🐉'],
+            party: ['🎈','🎉','🎊','🎎','🎏','🎐','🧧','🎀','🎁','🕯️','🍰','🎂','🧁','🥂','🍾','🍷','🍸','🍹','🍺','🍻','🍭','🍬','🍫','🍿','🍩','🍪'],
+            office: ['💼','📁','📂','🗂️','📅','📆','🗒️','🗓️','📇','📈','📉','📊','📋','📌','📍','📎','🖇️','📏','📐','✂️','🗃️','🗄️','🗑️','🔒','🔓','🔏','🔐','🔑','🗝️'],
+            science: ['⚗️','🧪','🧫','🧬','🔬','🔭','📡','💉','🩸','💊','🩹','🩺','🌡️','🧬','🦠','🧫','🧪'],
+            cleaning: ['🧹','🪠','🧺','🧻','🚽','🚰','🚿','🛁','🛀','🧼','🪥','🪒','🧽','🪣','🧴'],
+            art: ['🎨','🖌️','🖍️','🧵','🧶','🎼','🎵','🎶','🎹','🥁','🎷','🎺','🎸','🪕','🎻','🎬','🎤','🎧','🎭','🖼️'],
+            travel: ['🧳','🌂','☂️','🧵','🧶','🕶️','👓','🥽','🥼','🦺','👔','👕','👖','🧣','🧤','🧥','🧦','👗','👘','🥻','🩱','🩲','🩳','👙','👚','👛','👜','👝','🛍️','🎒','🩴','👞','👟','🥾','🥿','👠','👡','🩰','👢','👑','👒','🎩','🎓','🧢','🪖','⛑️','📿','💄','💍','💎'],
+            school: ['🎒','📚','📓','📔','📒','📕','📗','📘','📙','📜','📃','📑','🔖','🏷️','💰','🪙','💴','💵','💶','💷','💸','💳','🧾','✉️','📧','📨','📩','📤','📥','📦','📫','📪','📬','📭','📮','🗳️','✏️','✒️','🖋️','🖊️','🖌️','🖍️','📝'],
+            medical: ['💉','🩸','💊','🩹','🩺','🩻','🚑','🏥','⚕️','🦠','🧬','🧫','🧪','🌡️','🧬','🩺','🩻','🦷','🦴','🧠','🫀','🫁','👁️','👅','👄'],
+            construction: ['🏗️','🧱','🪨','🪵','🛖','🏘️','🏚️','🏠','🏡','🏢','🏣','🏤','🏥','🏦','🏨','🏩','🏪','🏫','🏬','🏭','🏯','🏰','💒','🗼','🗽','⛪','🕌','🛕','🕍','⛩️','🕋','⛲','⛺','🌁','🌃','🏙️','🌄','🌅','🌆','🌇','🌉','♨️'],
+            magic: ['✨','🪄','🎩','🐇','🕊️','🃏','🎴','🀄','🎲','♟️','🎯','🎳','🎮','🎰','🧩','🔮','🧿','🪬','🧞','🧞‍♂️','🧞‍♀️','🧜','🧜‍♂️','🧜‍♀️','🧚','🧚‍♂️','🧚‍♀️','👼','🤰','🤱'],
+            autumn: ['🍂','🍁','🍄','🌾','🌰','🐿️','🦔','🎃','🌽','🍎','🍐','🍇','🍊','🧥','🧣','👢','🌧️','🌫️','🌬️','🦃'],
+            winter: ['❄️','☃️','⛄','🌨️','🧊','⛸️','🎿','🛷','🧣','🧤','🧥','🧦','👢','🎄','🎅','🤶','🦌','🐧','🐻‍❄️','🦉'],
+            spring: ['🌱','🌷','🌹','🌺','🌸','🌼','🌻','🌿','☘️','🍀','🐝','🐞','🦋','🐛','🐌','🐣','🐤','🐥','🐦','🐸','🐢','🌦️','🌈','🌂','☂️'],
+            summer: ['☀️','🌻','🌴','🌵','🌊','🏖️','🏝️','🕶️','👙','🩱','🩲','🩳','👒','🧢','🍦','🍧','🍨','🍉','🍍','🥥','🥝','🍹','🍸','🏄','🏊','🤽'],
+            arrows: ['⬆️','↗️','➡️','↘️','⬇️','↙️','⬅️','↖️','↕️','↔️','↩️','↪️','⤴️','⤵️','🔃','🔄','🔙','🔚','🔛','🔜','🔝','🛐','⚛️','🕉️','✡️','☸️','☯️','✝️','☦️','☪️','☮️','🕎','🔯','♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓','⛎','🔀','🔁','🔂','▶️','⏩','⏭️','⏯️','◀️','⏪','⏮️','🔼','⏫','🔽','⏬','⏸️','⏹️','⏺️','⏏️','🎦','🔅','🔆','📶','📳','📴','♀️','♂️','⚧️','✖️','➕','➖','➗','♾️']
+        };
+
+        const HAND_BASES = ['👋','🤚','✋','🖖','👌','🤌','🤏','✌️','🤞','🤟','🤘','🤙','👈','👉','👆','👇','☝️','👍','👎','✊','👊','🤛','🤜','👏','🙌','👐','🤲','🤝','🙏','✍️','💅','🤳','💪','🦵','🦶','👂','🦻','👃'];
+        const TONES = ['🏻', '🏼', '🏽', '🏾', '🏿'];
+
+        const COLOR_INDEX = {
+            red: [
+                '❤️','🍎','🍒','🍓','🍄','🌶️','🥊','🚗','🏎️','🚒','🎈','🏮','📕','📌','📍','🧨','🧧','🥊','🥅','🩸','🥵','👺','👹','💋','💄','🦀','🦞','🦐',
+                '👠','🎒','🌹','🥀','🌡️','🛑','📛','🚫','🉐','㊙️','㊗️','🅰️','🅱️','🆎','🅾️','🆘','🈲','🛑','🍫','🤬','😡','🧣','👺','👹','🍷','🥤','🏓','🕹️','☎️','📮','📫','📪','🧰','🧯','🍟','🥩','🎸','🥁'
+            ],
+            orange: [
+                '🧡','🍊','🥭','🥕','🎃','🏀','🧱','📙','🔶','🟧','🟠','🦁','🦊','🐅','⛺','🦺','✴️','🉑','🈶','🈚','🈸','🈺','🈷️',
+                '🐈','🍁','🍂','⛺','🌋','🌅','🌇','🕌','⛩️','🚚','🦼','🦽','☢️','☣️','📴','📵','🍘','🍤','🍝','🌭','🍔','🍟','🥐','🍞'
+            ],
+            yellow: [
+                '💛','🍋','🍌','🍍','🌽','🧀','🌮','🍺','🚜','🚕','🚌','📒','⚠️','⚡','⭐','🌟','🌕','🌝','🌞','👑','🏆','🥇','🎫','🟡','🟨','🐤','🐥','🐝','👱','😺','😸','😹',
+                '🔑','🏷️','📁','📂','🔅','🔆','🥎','🦒','🐆','🐫','🐈','🌻','🌼','🌙','🌛','🌜','💫','✨','🎺','🎷','🍯','🥞','🧇','🍟','🧀','🍰','🍿','🧈','🚜','🚧','🚸','👷','👷‍♀️'
+            ],
+            green: [
+                '💚','🍈','🍏','🍐','🥝','🥦','🥬','🥒','🌽','🥑','🫒','🌲','🌳','🌴','🌵','🌾','🌿','☘️','🍀','🍃','🦜','🐸','🐊','🐢','🦎','🐍','🐉','🦗','🦠','🧩','📗','💵','💸','♻️','✅','🟩','🟢','🤢',
+                '🤢','🤮','👒','🧤','🛣️','🛤️','🔋','🎄','🎋','🎍','💹','❇️','✳️','❎','🥗','🍵','🧉','🎾','⛳','🧪','🍵','🔋','🎄','🐲','🦕','🦖','🐛','🦠','🧪','🥗','🫑','🥬'
+            ],
+            blue: [
+                '💙','🫐','🍇','🧊','🐋','🐳','🐬','🐟','🦈','🥶','👮','👕','👖','🧢','💎','📘','📪','📫','📬','📭','🖌️','🟦','🔵','🥶','🌀','💤','❄️','🌊','🌌','🥶','😨','😰',
+                '🎽','👔','👗','👘','🥿','🧵','🧶','👮','👮‍♂️','👮‍♀️','🥶','🧊','💎','🧿','🥣','🍼','🚆','🚄','🚅','✈️','🛫','🛬','🛰️','🪐','🗺️','🌐','🌀','💤','🏧','🚮','🚰','♿','🚹','🛂','🛃','🛄','🛅','🐋','🐬'
+            ],
+            purple: [
+                '💜','👿','👾','🍆','🍇','🍠','🔮','🟣','🟪','☂️','☔','🦄','😈','👿','👾','🌂','🧘','🧘‍♀️','🧘‍♂️',
+                '👿','😈','👾','🟣','🟪','🧘','🧘‍♀️','🧘‍♂️','🪁','🌂','☔','🍠','🍆','🍇','🫐','🎆','🕎','🛐','⚛️','🕉️','✡️','☸️','☯️','✝️','☦️','☪️','☮️','🕎','🔯','♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓','⛎'
+            ],
+            brown: [
+                '🤎','🥔','🥥','🌰','🍩','🍪','🍫','💩','🐻','🐒','🐎','🪵','⚰️','🧱','💼','👞','👢','👜','🟤','🐵','👞','👢','💼','👜','🚪','🪑','🛌','🧸','🪵','🪹','🪺','🐿️','🦫','🦔','🦇','🐻','🐻‍❄️','🐨',
+                '🍞','🥐','🥖','🥨','🥞','🧇','🍖','🍗','🍔','🌭','🥙','🥪','🌮','🌯','🍘','🍙','🍚','🍛','🍜','🍝','🍠','🍢','🍡','🥟','🥡','🪵','🚪','🪑','🎻','🎸','🧱','🙉','🙊'
+            ],
+            black: [
+                '🖤','🎱','🎩','🎓','🐜','🕷️','🐈‍⬛','🦍','🌑','🌚','🎥','💣','🔌','📼','📷','🎮','⬛','⚫','♟️','♠️','♣️','🕶️','🐧','🐦‍⬛','🐃','🐂','🐄','🐾','🕴️','🕴','💂','💂‍♂️','💂‍♀️','👯','👯‍♂️','👯‍♀️','👓','🕶️','🎩','🎓',
+                '🕳️','💣','🕋','🎱','🎮','🎹','♟️','🎬','🎥','📽️','📹','📼','📷','📸','📞','☎️','📠','📺','📻','🔇','🔉','🔊','🔋','🔌','💻','🖥️','🖨️','⌨️','🖱️','🖲️','💽','💾','💿','📀','🚓','🚔'
+            ],
+            white: [
+                '🤍','👻','💀','☠️','🦷','🦴','🐔','🦢','🕊️','🐁','🐇','🐑','🐏','☁️','🌨️','🌪️','🌫️','🍚','🥛','🥡','🧻','🏐','🥋','🎲','⬜','⚪','🥚','🧂','🍙','🍡','🍦','🍼','🍽️','🥄','🔪','🥚','🍳','🧂','🍙','🍚','🏐','🥋','🤺','⛸️','🎿','🦴','🦷',
+                '👰','👰‍♀️','👰‍♂️','👮','👮‍♂️','👮‍♀️','👻','💀','☠️','👽','👾','🤖','🦴','🦷','👀','👁️','👂','👃','🧠','🫁','🦷','🦴','👀','👁️','👅','👄','🏐','🥋','🤺','⛸️','🎿','🥌','⛳','🥅','🏒','🏑'
+            ]
+        };
+
+        // --- STATE ---
+        const state = {
+            rawText: "",
+            textLines: ["EMOJI"],
+            font: "Rubik Mono One",
+            palette: "all",
+            ratio: "16:9", 
+            density: 15,
+            spacing: 0, 
+            gap: 0,
+            colorMode: "original",
+            targetColor: "#f43f5e", // Used for Tint
+            nativeColors: ['red'],  // Used for Native (Multi-Select)
+            bgMode: "solid",
+            bgColor: "#050505",
+            bgGrad1: "#1e1b4b",
+            bgGrad2: "#000000",
+            bgAngle: 45,
+            seed: Math.floor(Math.random() * 2147483647) 
+        };
+
+        const dom = {
+            canvas: document.getElementById('main-canvas'),
+            stage: document.getElementById('stage-area'),
+            hud: document.getElementById('hud-panel'),
+            toggle: document.getElementById('panel-toggle'),
+            floatToggle: document.getElementById('float-toggle'),
+            text: document.getElementById('ui-text'),
+            ratio: document.getElementById('ui-ratio'),
+            font: document.getElementById('ui-font'),
+            density: document.getElementById('ui-density'),
+            spacing: document.getElementById('ui-spacing'),
+            gap: document.getElementById('ui-gap'),
+            palette: document.getElementById('ui-palette'),
+            targetColor: document.getElementById('ui-target-color'),
+            bgMode: document.getElementById('ui-bg-mode'),
+            bgSolid: document.getElementById('ui-bg-solid'),
+            bgGrad1: document.getElementById('ui-bg-grad-1'),
+            bgGrad2: document.getElementById('ui-bg-grad-2'),
+            bgAngle: document.getElementById('ui-bg-angle'),
+            colorRadios: document.getElementsByName('colorMode'),
+            ctrlPalette: document.getElementById('ctrl-palette'),
+            ctrlTint: document.getElementById('ctrl-tint'),
+            ctrlNative: document.getElementById('ctrl-native'),
+            nativeGrid: document.getElementById('native-color-grid'),
+            bgSolidWrap: document.getElementById('bg-solid-wrap'),
+            bgGradWrap: document.getElementById('bg-grad-wrap'),
+            valDensity: document.getElementById('val-density'),
+            valSpacing: document.getElementById('val-spacing'),
+            valGap: document.getElementById('val-gap'),
+            valAngle: document.getElementById('val-angle'),
+            valTarget: document.getElementById('target-name'),
+            btnRandom: document.getElementById('btn-random'),
+            btnReset: document.getElementById('btn-reset'),
+            btnExport: document.getElementById('btn-export'),
+            btnRemixNative: document.getElementById('btn-remix-native'),
+            btnRemixPalette: document.getElementById('btn-remix-palette') 
+        };
+
+        const ctx = dom.canvas.getContext('2d');
+
+        // --- INIT ---
+        function init() {
+            HAND_BASES.forEach(b => TONES.forEach(t => PALETTES.hands.push(b+t)));
+            Object.values(PALETTES).forEach(arr => {
+                if(arr !== PALETTES.all) PALETTES.all.push(...arr);
+            });
+
+            FONTS.forEach(f => {
+                const o = document.createElement('option');
+                o.value = f; o.innerText = f;
+                dom.font.appendChild(o);
+            });
+
+            Object.keys(PALETTES).forEach(k => {
+                const o = document.createElement('option');
+                o.value = k; o.innerText = k.toUpperCase();
+                dom.palette.appendChild(o);
+            });
+
+            // Initialize Native Color Grid
+            const buckets = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'brown', 'black', 'white'];
+            const bucketHex = {
+                red: '#ef4444', orange: '#f97316', yellow: '#eab308', green: '#22c55e',
+                blue: '#3b82f6', purple: '#a855f7', brown: '#78350f', black: '#171717', white: '#f8fafc'
+            };
+
+            buckets.forEach(color => {
+                const btn = document.createElement('div');
+                btn.className = `native-toggle h-8 rounded-md cursor-pointer border border-white/10 transition hover:scale-105`;
+                btn.style.backgroundColor = bucketHex[color];
+                btn.dataset.color = color;
+                
+                // Active State Logic controlled by Helper
+                btn.onclick = () => {
+                    if(state.nativeColors.includes(color)) {
+                        if(state.nativeColors.length > 1) { // Prevent empty state
+                            state.nativeColors = state.nativeColors.filter(c => c !== color);
+                        }
+                    } else {
+                        state.nativeColors.push(color);
+                    }
+                    updateNativeGridUI(); 
+                    render();
+                };
+                dom.nativeGrid.appendChild(btn);
+            });
+
+            setupEvents();
+            randomize(); 
+            
+            document.fonts.ready.then(() => {
+                resizeCanvas(); 
+                render();
+            });
+        }
+
+        // --- EVENTS ---
+        function setupEvents() {
+            window.addEventListener('resize', () => { resizeCanvas(); render(); });
+
+            const togglePanel = () => {
+                dom.hud.classList.toggle('collapsed');
+                if(dom.hud.classList.contains('collapsed')) {
+                    dom.floatToggle.classList.add('visible');
+                } else {
+                    dom.floatToggle.classList.remove('visible');
+                }
+            };
+
+            dom.toggle.addEventListener('click', togglePanel);
+            dom.floatToggle.addEventListener('click', togglePanel);
+
+            // Close menu on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !dom.hud.classList.contains('collapsed')) {
+                    togglePanel();
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                const isClickInside = dom.hud.contains(e.target);
+                const isToggleBtn = dom.toggle.contains(e.target) || dom.floatToggle.contains(e.target);
+                
+                if (!dom.hud.classList.contains('collapsed') && !isClickInside && !isToggleBtn) {
+                    togglePanel();
+                }
+            });
+
+            dom.text.addEventListener('input', (e) => {
+                state.rawText = e.target.value;
+                state.textLines = state.rawText.trim() ? state.rawText.toUpperCase().split('\n') : ["EMOJI"];
+                render();
+            });
+
+            const bind = (el, key, type='val') => {
+                el.addEventListener('input', (e) => {
+                    state[key] = type === 'int' ? parseInt(e.target.value) : e.target.value;
+                    
+                    if(key === 'ratio') resizeCanvas();
+                    if(key === 'bgMode' || key === 'targetColor') updateUI();
+                    
+                    if(key === 'font') {
+                        document.fonts.load(`10px "${state.font}"`).then(() => render());
+                        return;
+                    }
+
+                    if(dom.valDensity) dom.valDensity.innerText = state.density + 'px';
+                    if(dom.valSpacing) dom.valSpacing.innerText = state.spacing;
+                    if(dom.valGap) dom.valGap.innerText = state.gap;
+                    if(dom.valAngle) dom.valAngle.innerText = state.bgAngle + '°';
+
+                    render();
+                });
+            };
+
+            bind(dom.ratio, 'ratio');
+            bind(dom.font, 'font');
+            bind(dom.density, 'density', 'int');
+            bind(dom.spacing, 'spacing', 'int');
+            bind(dom.gap, 'gap', 'int');
+            bind(dom.palette, 'palette');
+            bind(dom.targetColor, 'targetColor');
+            bind(dom.bgMode, 'bgMode');
+            bind(dom.bgSolid, 'bgColor');
+            bind(dom.bgGrad1, 'bgGrad1');
+            bind(dom.bgGrad2, 'bgGrad2');
+            bind(dom.bgAngle, 'bgAngle', 'int');
+
+            dom.colorRadios.forEach(r => {
+                r.addEventListener('change', (e) => {
+                    state.colorMode = e.target.value;
+                    updateUI();
+                    render();
+                });
+            });
+
+            dom.btnRandom.addEventListener('click', randomize);
+            dom.btnReset.addEventListener('click', () => {
+                state.font = "Rubik Mono One";
+                state.density = 15; state.spacing = 0; state.gap = 0;
+                state.ratio = "16:9"; state.bgMode = "solid"; state.bgColor = "#050505";
+                state.colorMode = "original"; state.rawText = ""; state.textLines = ["EMOJI"];
+                state.nativeColors = ['red'];
+                dom.text.value = "";
+                updateUI(); resizeCanvas(); render();
+            });
+            dom.btnExport.addEventListener('click', exportImage);
+            
+            // Remix Logic (Shared by both buttons)
+            const remix = () => {
+                state.seed = Math.floor(Math.random() * 2147483647);
+                render();
+            };
+            
+            if(dom.btnRemixNative) dom.btnRemixNative.addEventListener('click', remix);
+            if(dom.btnRemixPalette) dom.btnRemixPalette.addEventListener('click', remix);
+        }
+
+        // --- UI UPDATES ---
+        function updateNativeGridUI() {
+            const btns = dom.nativeGrid.children;
+            for(let btn of btns) {
+                if(state.nativeColors.includes(btn.dataset.color)) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            }
+        }
+
+        function updateUI() {
+            dom.ctrlPalette.classList.add('hidden');
+            dom.ctrlNative.classList.add('hidden');
+            dom.ctrlTint.classList.add('hidden');
+
+            if(state.colorMode === 'native') {
+                dom.ctrlNative.classList.remove('hidden');
+                updateNativeGridUI();
+            } else if (state.colorMode === 'tint') {
+                dom.ctrlPalette.classList.remove('hidden');
+                dom.ctrlTint.classList.remove('hidden');
+                const n = getColorName(state.targetColor);
+                dom.valTarget.innerText = "TINT";
+            } else {
+                // Original
+                dom.ctrlPalette.classList.remove('hidden');
+            }
+
+            dom.bgSolidWrap.classList.add('hidden');
+            dom.bgGradWrap.classList.add('hidden');
+            
+            if(state.bgMode === 'solid') {
+                dom.bgSolidWrap.classList.remove('hidden');
+            } else if (state.bgMode === 'gradient') {
+                dom.bgGradWrap.classList.remove('hidden');
+            }
+
+            dom.font.value = state.font;
+            dom.ratio.value = state.ratio;
+            dom.density.value = state.density;
+            dom.valDensity.innerText = state.density + 'px';
+            dom.spacing.value = state.spacing;
+            dom.valSpacing.innerText = state.spacing;
+            dom.gap.value = state.gap;
+            dom.valGap.innerText = state.gap;
+            dom.palette.value = state.palette;
+            dom.bgMode.value = state.bgMode;
+            dom.targetColor.value = state.targetColor;
+            dom.bgSolid.value = state.bgColor;
+            dom.colorRadios.forEach(r => r.checked = (r.value === state.colorMode));
+        }
+
+        function resizeCanvas() {
+            const container = dom.stage.getBoundingClientRect();
+            const padding = 80; 
+            const maxW = container.width - padding;
+            const maxH = container.height - padding;
+
+            let targetW, targetH;
+
+            // 16:9
+            if (state.ratio === '16:9') {
+                if (maxW / maxH > 1.777) { targetH = maxH; targetW = maxH * 1.777; }
+                else { targetW = maxW; targetH = maxW / 1.777; }
+            }
+            // 1:1
+            else if (state.ratio === '1:1') {
+                const s = Math.min(maxW, maxH);
+                targetW = s; targetH = s;
+            }
+            // 4:5
+            else if (state.ratio === '4:5') {
+                if (maxW / maxH > 0.8) { targetH = maxH; targetW = maxH * 0.8; }
+                else { targetW = maxW; targetH = maxW / 0.8; }
+            }
+            // 9:16
+            else if (state.ratio === '9:16') {
+                if (maxW / maxH > 0.5625) { targetH = maxH; targetW = maxH * 0.5625; }
+                else { targetW = maxW; targetH = maxW / 0.5625; }
+            }
+            // Fit Screen (Fallback/Default)
+            else {
+                if (maxW / maxH > 1.777) { targetH = maxH; targetW = maxH * 1.777; }
+                else { targetW = maxW; targetH = maxW / 1.777; }
+            }
+
+            dom.canvas.style.width = `${targetW}px`;
+            dom.canvas.style.height = `${targetH}px`;
+            
+            const dpr = 2; 
+            dom.canvas.width = targetW * dpr;
+            dom.canvas.height = targetH * dpr;
+        }
+
+        function randomize() {
+            const r = arr => arr[Math.floor(Math.random() * arr.length)];
+            
+            state.seed = Math.floor(Math.random() * 2147483647);
+            state.font = r(FONTS);
+            state.palette = r(Object.keys(PALETTES));
+            state.density = Math.floor(Math.random() * 15) + 10;
+            state.spacing = 0; 
+            
+            const cRoll = Math.random();
+            if(cRoll < 0.4) state.colorMode = 'original';
+            else if(cRoll < 0.7) state.colorMode = 'native';
+            else state.colorMode = 'tint';
+            
+            if(state.colorMode === 'native') {
+                // Pick 1-2 random colors
+                const buckets = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'brown', 'black', 'white'];
+                const count = Math.random() > 0.7 ? 2 : 1;
+                state.nativeColors = [];
+                for(let i=0; i<count; i++) {
+                    const c = r(buckets);
+                    if(!state.nativeColors.includes(c)) state.nativeColors.push(c);
+                }
+            }
+
+            state.targetColor = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            state.bgMode = r(['solid', 'gradient']);
+            state.bgColor = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            state.bgGrad1 = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            state.bgGrad2 = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+            
+            updateUI();
+            document.fonts.load(`10px "${state.font}"`).then(() => render());
+        }
+
+        // --- RENDER ---
+        function draw(targetCtx, w, h, isExport) {
+            targetCtx.clearRect(0,0,w,h);
+            
+            // BG
+            if(state.bgMode === 'solid') {
+                targetCtx.fillStyle = state.bgColor;
+                targetCtx.fillRect(0,0,w,h);
+            } else if(state.bgMode === 'gradient') {
+                const ang = (state.bgAngle - 90) * (Math.PI/180);
+                const cx = w/2, cy = h/2;
+                const diag = Math.sqrt(w*w+h*h)/2;
+                const g = targetCtx.createLinearGradient(
+                    cx - Math.cos(ang)*diag, cy - Math.sin(ang)*diag,
+                    cx + Math.cos(ang)*diag, cy + Math.sin(ang)*diag
+                );
+                g.addColorStop(0, state.bgGrad1);
+                g.addColorStop(1, state.bgGrad2);
+                targetCtx.fillStyle = g;
+                targetCtx.fillRect(0,0,w,h);
+            }
+
+            // Emoji Selection
+            let emojis = [];
+            if(state.colorMode === 'native') {
+                // Aggregating multiple selected buckets
+                state.nativeColors.forEach(color => {
+                    if(COLOR_INDEX[color]) emojis.push(...COLOR_INDEX[color]);
+                });
+                if(emojis.length === 0) emojis = COLOR_INDEX['red']; // Fallback
+            } else {
+                emojis = PALETTES[state.palette] || PALETTES.all;
+            }
+            if(!emojis.length) emojis = PALETTES.all;
+            
+            // Filter out standalone skin tone modifiers
+            emojis = emojis.filter(e => !/^[\u{1F3FB}-\u{1F3FF}]$/u.test(e));
+
+            // MASK GENERATION (Standard Native Rendering)
+            const maskCvs = document.createElement('canvas');
+            maskCvs.width = w; maskCvs.height = h;
+            const maskCtx = maskCvs.getContext('2d');
+            
+            const lines = state.textLines;
+            let testSize = w * 0.5; // Start Large
+            
+            // Configure Native Spacing
+            // Scale spacing based on width to maintain visual consistency between preview and export
+            // Factor: At w=2000 (Typical 2x Retina Preview), we want ~2x multiplier
+            const trackingVal = state.spacing * (w / 1000);
+            maskCtx.letterSpacing = `${trackingVal}px`;
+            
+            maskCtx.font = `900 ${testSize}px "${state.font}"`;
+            maskCtx.textAlign = 'center';
+            
+            // Switch to alphabetic for precise bounding box measurement
+            maskCtx.textBaseline = 'alphabetic'; 
+            maskCtx.fillStyle = 'white';
+            
+            // Measure lines naturally to get Width AND Vertical Metrics
+            let maxLineW = 0;
+            const lineMetrics = [];
+            
+            lines.forEach(line => {
+                const m = maskCtx.measureText(line);
+                if(m.width > maxLineW) maxLineW = m.width;
+                lineMetrics.push(m);
+            });
+
+            // Scale to fit width (80% safe zone)
+            const targetW = w * 0.80; 
+            const targetH = h * 0.80;
+            const lineHeight = testSize;
+            
+            // Calculate total height based on line count
+            // Note: We use standard leading (1.0) for stacking
+            const totalStackH = lines.length * lineHeight; 
+            
+            // Calculate scale factor
+            const scaleW = targetW / maxLineW;
+            const scaleH = targetH / totalStackH;
+            const finalScale = Math.min(scaleW, scaleH);
+            
+            // Apply scale from center
+            maskCtx.translate(w/2, h/2);
+            maskCtx.scale(finalScale, finalScale);
+            
+            // VERTICAL CENTERING LOGIC
+            let startY = 0;
+
+            // Check if browser supports advanced metrics (Modern Chrome/Safari/FF)
+            if (lineMetrics.length > 0 && lineMetrics[0].actualBoundingBoxAscent !== undefined) {
+                // Get the visual top of the first line (distance UP from baseline)
+                const firstAscent = lineMetrics[0].actualBoundingBoxAscent;
+                // Get the visual bottom of the last line (distance DOWN from baseline)
+                const lastDescent = lineMetrics[lines.length - 1].actualBoundingBoxDescent;
+                
+                // Distance from Line 1 Baseline to Line N Baseline
+                const baselineSpan = (lines.length - 1) * lineHeight;
+                
+                // We calculate the offset needed to put the exact center of the "Ink" at 0,0
+                // Formula: (Ascent of Top Line - Total Vertical Span of Baselines - Descent of Bottom Line) / 2
+                startY = (firstAscent - baselineSpan - lastDescent) / 2;
+            } else {
+                // Fallback for older environments: Center based on Line Height math
+                maskCtx.textBaseline = 'middle';
+                const totalTextH = lines.length * lineHeight;
+                startY = -(totalTextH/2) + (lineHeight/2);
+            }
+
+            // Draw Lines
+            lines.forEach((line, i) => {
+                maskCtx.fillText(line, 0, startY + (i * lineHeight));
+            });
+
+            // Grid
+            const maskData = maskCtx.getImageData(0,0,w,h).data;
+            const eLayer = document.createElement('canvas');
+            eLayer.width = w; eLayer.height = h;
+            const eCtx = eLayer.getContext('2d');
+
+            const refW = 2000;
+            const step = Math.max(1, (state.density / refW) * w);
+
+            eCtx.textAlign = 'center'; eCtx.textBaseline = 'middle';
+
+            for(let y=0; y<h; y+=step) {
+                for(let x=0; x<w; x+=step) {
+                    const cx = Math.floor(x + step/2);
+                    const cy = Math.floor(y + step/2);
+                    if(cx >= w || cy >= h) continue;
+
+                    const i = (cy * w + cx) * 4;
+                    if(maskData[i+3] > 80) { 
+                        const hVal = hash(Math.round(x/step), Math.round(y/step), state.seed);
+                        const char = emojis[Math.floor(hVal * emojis.length)];
+                        
+                        let size = step * (1 - (state.gap / 100));
+                        if(size < 0.5) size = 0.5;
+
+                        eCtx.font = `${size}px sans-serif`;
+                        eCtx.fillText(char, cx, cy);
+                    }
+                }
+            }
+
+            if(state.colorMode === 'tint') {
+                eCtx.globalCompositeOperation = 'source-in';
+                eCtx.fillStyle = state.targetColor;
+                eCtx.fillRect(0,0,w,h);
+            }
+
+            targetCtx.drawImage(eLayer, 0, 0);
+        }
+
+        function render() {
+            draw(ctx, dom.canvas.width, dom.canvas.height, false);
+        }
+
+        function exportImage() {
+            let targetW, targetH;
+            
+            // Hardset dimensions based on ratio
+            if (state.ratio === '16:9') { targetW = 3840; targetH = 2160; }
+            else if (state.ratio === '9:16') { targetW = 2160; targetH = 3840; }
+            else if (state.ratio === '1:1') { targetW = 2160; targetH = 2160; }
+            else if (state.ratio === '4:5') { targetW = 2160; targetH = 2700; }
+            else { 
+                // Fallback
+                targetW = 3840; targetH = 2160; 
+            }
+
+            const cvs = document.createElement('canvas');
+            cvs.width = targetW; cvs.height = targetH;
+            draw(cvs.getContext('2d'), targetW, targetH, true);
+            
+            // --- UPDATED FILENAME LOGIC ---
+            // 1. Text
+            let safeText = (state.rawText || "Fontmoji").replace(/[\n\r]+/g, " ").trim();
+            safeText = safeText.replace(/[^a-zA-Z0-9 ]/g, "").replace(/\s+/g, "-").substring(0, 30);
+            if (!safeText) safeText = "Fontmoji";
+
+            // 2. Font
+            const safeFont = state.font.replace(/\s+/g, "-");
+
+            // 3. Emoji Setting
+            let safeEmoji = state.palette;
+            if (state.colorMode === 'native') {
+                safeEmoji = state.nativeColors.join('-') + "-native";
+            } else if (state.colorMode === 'tint') {
+                safeEmoji = "tint-" + getColorName(state.targetColor);
+            }
+
+            // 4. Date
+            const dateStr = new Date().toISOString().split('T')[0];
+
+            const a = document.createElement('a');
+            a.download = `${safeText}_${safeFont}_${safeEmoji}_${dateStr}.png`;
+            a.href = cvs.toDataURL();
+            a.click();
+        }
+
+        function hash(x, y, seed) {
+            let h = seed ^ (x * 374761393) ^ (y * 668265263);
+            h = Math.imul(h ^ (h >>> 16), 2246822507);
+            h = Math.imul(h ^ (h >>> 13), 3266489909);
+            return ((h ^ (h >>> 16)) >>> 0) / 4294967296;
+        }
+
+        function getColorName(hex) {
+            let r=0,g=0,b=0;
+            if(hex.length==4){r="0x"+hex[1]+hex[1];g="0x"+hex[2]+hex[2];b="0x"+hex[3]+hex[3];}
+            else{r="0x"+hex[1]+hex[2];g="0x"+hex[3]+hex[4];b="0x"+hex[5]+hex[6];}
+            r/=255;g/=255;b/=255;
+            let cmin=Math.min(r,g,b), cmax=Math.max(r,g,b), delta=cmax-cmin, h=0, s=0, l=0;
+            if(delta==0)h=0; else if(cmax==r)h=((g-b)/delta)%6; else if(cmax==g)h=(b-r)/delta+2; else h=(r-g)/delta+4;
+            h=Math.round(h*60); if(h<0)h+=360;
+            l=(cmax+cmin)/2; s=delta==0?0:delta/(1-Math.abs(2*l-1));
+            if(l*100 < 15) return 'black'; if(l*100 > 90) return 'white'; if(s*100 < 10) return 'black'; 
+            if(h>=330 || h<15) return 'red'; if(h>=15 && h<45) return 'orange'; if(h>=45 && h<70) return 'yellow';
+            if(h>=70 && h<160) return 'green'; if(h>=160 && h<250) return 'blue'; if(h>=250 && h<290) return 'purple';
+            if(h>=290 && h<330) return 'pink'; return 'red';
+        }
+
+        init();
+    </script>
+</body>
+</html>
